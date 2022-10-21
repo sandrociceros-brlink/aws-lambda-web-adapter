@@ -1,4 +1,4 @@
-FROM public.ecr.aws/amazonlinux/amazonlinux:2 as build-stage
+FROM public.ecr.aws/amazonlinux/amazonlinux:2@sha256:d0cc2f24c888613be336379e7104a216c9aa881c74d6df15e30286f676251987 as build-stage
 ARG ARCH=x86_64
 RUN rpm --rebuilddb && yum install -y yum-plugin-ovl jq
 RUN yum groupinstall -y "Development tools"
